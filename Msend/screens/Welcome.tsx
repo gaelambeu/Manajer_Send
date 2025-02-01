@@ -21,7 +21,18 @@ export default function Welcome({navigation} : WelcomeProps) {
         resizeMode="cover"
       >
 
-      <View>
+      <View style={styles.overlay}>
+        <View style={styles.overtitle}>
+          <Text style={styles.accueiltext}>Bienvenue</Text>
+          <Text style={styles.surtext}>sur</Text>
+
+          <View style={styles.overname}>
+           <Text style={styles.namemanajer}>MANJER</Text>
+           <Text style={styles.namesend}>SEND</Text>
+          </View>
+        </View>
+
+
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("HomeTransaction")}>
           <View style={styles.buttonPreview}>
             <Text style={styles.buttonText}>Faire une Transaction</Text>
@@ -45,13 +56,71 @@ const styles = StyleSheet.create({
   },
   background: {
     flex: 1,
+  },
+  overlay: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: "rgba(0, 0, 0, 0.6)",
+    width: '100%',
+    height: '100%',
   },
+
+  overtitle :{
+    marginTop: 70,
+    paddingTop: 80,
+    fontSize: 50,
+    fontStyle: "normal",
+    fontWeight: "900",
+    //backgroundColor: "rgba(159, 22, 22, 0.5)",
+  },
+
+  accueiltext :{
+    fontSize: 50,
+    fontStyle: "normal",
+    marginLeft: 20,
+    fontWeight: "900",
+    color: "white",
+    //backgroundColor: "rgba(22, 56, 159, 0.5)",
+  },
+  surtext :{
+    paddingTop: 5,
+    fontSize: 50,
+    fontStyle: "normal",
+    fontWeight: "700",
+    marginLeft: 95,
+    color: "#064085",
+    //backgroundColor: "rgba(240, 228, 228, 0.5)",
+  },
+
+  
+  overname :{
+    padding: 10,
+    flexDirection: "row",
+    //backgroundColor: "rgba(159, 22, 22, 0.5)",
+    marginTop: 20,
+  },
+
+  namemanajer :{
+    fontSize: 60,
+    fontStyle: "normal",
+    fontWeight: "900",
+    color: "white",
+    //backgroundColor: "rgba(159, 22, 22, 0.5)",
+  },
+  namesend :{
+    fontSize: 20,
+    fontStyle: "normal",
+    fontWeight: "600",
+    //backgroundColor: "rgba(251, 250, 250, 0.5)",
+    color: "#064085"
+  },
+
+
   button :{
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 550,
+    marginTop: 170,
   },
   buttonPreview: {
     backgroundColor: "rgba(254, 254, 254, 0.9)",
